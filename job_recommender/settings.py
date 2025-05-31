@@ -57,6 +57,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2+=k2w)cea-!437@fzp(_0j18kdm=^^3&-u*acma7+ha%qe9dp'
+SECRET_KEY=os.environ.get("SECRET_KEY", SECRET_KEY)  # Use environment variable for production
+DEBUG=os.environ.get("DEBUG", "False")=="True"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
